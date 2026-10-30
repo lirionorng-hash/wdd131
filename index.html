@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals. Lirionor Nascimento Guimarães' course homepage with personal information, Paraná highlights and useful web development resources.">
+  <meta name="author" content="Lirionor Nascimento Guimarães">
+  <title>WDD 131 – Dynamic Web Fundamentals – Lirionor Nascimento Guimarães</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/base.css">
+  <script src="scripts/obterdatas.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <span id="titulo-curso">WDD131 – Fundamentos da Web Dinâmica</span>
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=por&amp;id=p7#p7" target="_blank" rel="noopener noreferrer">Scripture</a>
+      <a href="#final-project">Final Project</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <p class="eyebrow">WELCOME TO MY COURSE HOMEPAGE</p>
+      <h1>Lirionor Nascimento Guimarães</h1>
+      <p class="intro-subtitle">Learning to create web experiences that are accessible, useful, and responsive.</p>
+    </div>
+
+    <div class="card-grid">
+      <section class="card about-card" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <div class="card-content">
+          <div class="about-top">
+            <div>
+              <p>Hello! My name is Lirionor Nascimento Guimarães. I'm interested in technology, continuous learning, and how thoughtful design makes information easier to access.</p>
+              <p>Through WDD 131, I'm building practical skills in HTML, CSS, and JavaScript, focusing on websites that work well for everyone.</p>
+            </div>
+            <figure class="portrait">
+              <img src="imagens/perfil.svg" alt="Illustrated placeholder portrait representing the student" width="240" height="280">
+              <figcaption>Student profile illustration</figcaption>
+            </figure>
+          </div>
+          <div class="region-heading">
+            <h3>Paraná, Brazil</h3>
+            <span aria-hidden="true">✦</span>
+          </div>
+          <div class="region-content">
+            <figure class="region-image">
+              <img src="imagens/parana.svg" alt="Illustration of Paraná's araucaria trees and green landscape" width="440" height="300" loading="lazy">
+              <figcaption>Araucaria trees in Paraná</figcaption>
+            </figure>
+            <p>Paraná is a state in southern Brazil, known for its natural beauty, cultural diversity, and iconic araucaria trees. Curitiba, its capital, is recognized for its parks and urban planning.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card resources-card" aria-labelledby="resources-title">
+        <h2 id="resources-title">Web Dev Resources</h2>
+        <div class="card-content">
+          <p class="resources-lead">Useful places to learn, practice, and discover new ideas.</p>
+          <ul class="resources-list">
+            <li><a href="https://dev.to/" target="_blank" rel="noopener noreferrer">DEV Community</a></li>
+            <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener noreferrer">Smashing Magazine</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
+            <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+            <li><a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer">Udemy</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          </ul>
+          <div class="project-note" id="final-project">
+            <strong>Final project</strong>
+            <p>Project folder link will be added as the course progresses.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="anoatual"></span> · Lirionor Nascimento Guimarães · Paraná, Brazil</p>
+    <p id="ultimaModificacao"></p>
+  </footer>
+</body>
+</html>
