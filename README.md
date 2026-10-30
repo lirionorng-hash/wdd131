@@ -1,22 +1,29 @@
-# WDD 131 — S01: Course Home Page
+# WDD 131 — S01: Página Inicial do Curso
 
-## Files
-- `index.html`: course homepage (root of `wdd131`).
-- `estilos/base.css`: responsive styling using CSS Flex and CSS Grid.
-- `scripts/obterdatas.js`: current year and `document.lastModified`.
-- `imagens/`: two lightweight local SVG images.
+## Arquivos
+- `index.html`: página inicial do curso (raiz de `wdd131`).
+- `estilos/base.css`: estilo responsivo usando CSS Flex (navegação) e CSS Grid (cartões).
+- `scripts/obterdatas.js`: ano atual e `document.lastModified`.
+- `imagens/`: duas imagens locais otimizadas (`perfil.webp` e `instituicao.webp`).
 
-## Before submitting
-1. **Check personal details.** The name `Lirionor Nascimento Guimarães` and `Paraná, Brazil` are assumed for the draft. Replace any inaccurate information with your actual details.
-2. **Replace the illustrated portrait** with a real, optimized local personal photograph if your instructor expects a photograph. Update its `src`, `alt`, and dimensions.
-3. **Update LinkedIn**: the link currently points to LinkedIn's public homepage; insert your actual profile URL if you have one.
-4. **Edit biography and regional description** to represent you accurately.
-5. **Final Project** is intentionally a placeholder, as permitted by the assignment.
-6. In VS Code, open this folder, start Live Server, and check DevTools Console, Network transfer, CSS Overview and Lighthouse (desktop).
-7. Commit/push contents to GitHub repository `wdd131`, enable GitHub Pages from the repository root, and submit your published URL in Canvas.
+## Checklist atendida
+- `<!doctype html>`, `<html lang="pt-BR">`, `head` e `body`.
+- `head`: meta charset, meta viewport, title, meta description e meta author.
+- Header com `span id="titulo-curso"` e `nav` com LinkedIn, Canvas, Escrituras e Projeto Final.
+- `main` com `h1` (nome) e duas seções `class="card"` com título, imagens e conteúdo.
+- Footer com `© <span id="anoatual"></span>` + nome/local e `p id="ultimaModificacao"`.
+- Google Fonts via API oficial; navegação em Flex com efeito de hover; `main` centralizado e limitado; cartões em Grid.
+- JavaScript referenciado com `defer`; ano e última modificação gerados dinamicamente; sem saída para o console.
+- Imagens locais otimizadas (`perfil.webp` 22 kB, `instituicao.webp` 13 kB), com `alt` relevante e proporções preservadas.
 
-## Notes
-- The course instructions require `lang="en-US"`; page prose is in English accordingly.
-- Google Fonts is loaded through its official API as requested; internet access is needed to load these web fonts. Fallback fonts are configured.
-- No third-party CSS frameworks or JavaScript libraries used.
-- Final Google Lighthouse scores and network transfer depend on browser/network conditions and must be checked locally.
+## Antes de enviar
+1. Confira o LinkedIn: o link aponta para a página pública do LinkedIn; insira a URL do seu perfil, se tiver.
+2. Abra a pasta no VS Code, inicie o Live Server e verifique Console, Network (< 500 kB), CSS Overview e Lighthouse (desktop).
+3. Commit/push para o repositório `wdd131` no GitHub, habilite o GitHub Pages a partir da raiz e envie a URL publicada no Canvas.
+
+## Observações
+- Sem frameworks ou bibliotecas CSS/JS de terceiros.
+- As fontes do Google são carregadas pela API oficial; fontes de fallback configuradas.
+
+## Revisão técnica
+Consulte `AUDITORIA.md` para os ajustes realizados e os testes pendentes em navegador.

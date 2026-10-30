@@ -1,4 +1,4 @@
-/* WDD 131 | Course homepage — custom CSS only */
+/* WDD 131 | Página inicial do curso — CSS próprio, sem frameworks */
 :root { --navy:#173a50; --navy-deep:#102d41; --teal:#136f71; --ink:#172d3c; --muted:#496171; --line:#d9e2e7; --paper:#ffffff; --background:#f5f8fa; --accent:#f3c874; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -22,14 +22,15 @@ h1 { font-size:clamp(1.8rem,4vw,2.55rem); margin:0; color:var(--navy-deep); }
 .card h2 { background:var(--navy); color:white; text-align:center; padding:.9rem .7rem; margin:0; font-size:1.13rem; }
 .card-content { padding:1.5rem; }
 .card-content p { margin-top:0; }
-.about-top { display:grid; grid-template-columns:minmax(0,1fr) 145px; gap:1.35rem; align-items:start; }
+.about-top { display:grid; grid-template-columns:minmax(0,1fr) 150px; gap:1.35rem; align-items:start; }
 .portrait,.region-image { margin:0; text-align:center; }
-.portrait img,.region-image img { display:block; width:100%; height:auto; border-radius:9px; }
+.portrait img { display:block; width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:9px; }
+.region-image img { display:block; width:100%; height:auto; border-radius:9px; background:#000; }
 figcaption { color:var(--muted); font-size:.74rem; margin-top:.45rem; }
 .region-heading { display:flex; align-items:center; justify-content:center; gap:.7rem; border-bottom:1px solid var(--line); margin:1rem 0 1.15rem; padding-bottom:.65rem; }
 .region-heading h3 { margin:0; font-size:1.25rem; }
 .region-heading span { color:var(--teal); }
-.region-content { display:grid; grid-template-columns: minmax(130px, .9fr) minmax(0, 1.1fr); gap:1.25rem; align-items:start; }
+.region-content { display:grid; grid-template-columns: minmax(130px, .9fr) minmax(0, 1.1fr); gap:1.25rem; align-items:center; }
 .region-content p { margin:0; }
 .resources-lead { color:var(--muted); font-size:.94rem; }
 .resources-list { padding-left:1.35rem; margin:1.15rem 0 2rem; }
@@ -42,5 +43,8 @@ figcaption { color:var(--muted); font-size:.74rem; margin-top:.45rem; }
 .site-footer { text-align:center; background:var(--navy); color:#fff; padding:1.1rem 1rem; }
 .site-footer p { margin:.15rem 0; }
 #ultimaModificacao { color:#ffe1a0; font-size:.85rem; }
-@media (max-width:740px) { .card-grid { grid-template-columns:1fr; } main { padding-top:1.8rem; } }
-@media (max-width:480px) { .navigation { flex-wrap:wrap; gap:0; padding:0 .3rem; } .navigation a { flex:1 1 48%; font-size:.9rem; padding:.75rem .3rem; } .card-content { padding:1rem; } .about-top { grid-template-columns:1fr; } .portrait { max-width:170px; margin:0 auto; } .region-content { grid-template-columns:1fr; } .region-image { max-width:260px; margin:0 auto; } }
+@media (max-width:900px) { .card-grid { grid-template-columns:1fr; } main { padding-top:1.8rem; } }
+@media (max-width:480px) { .navigation { flex-wrap:wrap; gap:0; padding:0 .3rem; } .navigation a { flex:1 1 48%; font-size:.9rem; padding:.75rem .3rem; } .card-content { padding:1rem; } .about-top { grid-template-columns:1fr; } .portrait { max-width:200px; margin:0 auto; } .region-content { grid-template-columns:1fr; } .region-image { max-width:280px; margin:0 auto; } }
+
+/* Respeita a preferência de usuários que reduzem animações. */
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .navigation a { transition:none; } }
