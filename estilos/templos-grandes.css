@@ -1,48 +1,76 @@
 
-/* WDD 131 - S02 */
-/* Telas maiores */
+/* =========================================
+   WDD 131 - Semana 02
+   Álbum de Templos
+   Lirionor Nascimento Guimarães
 
-/* Tablets */
+   Estilos para tablets e computadores
+   ========================================= */
+
+/* Tablets - duas colunas */
 @media screen and (min-width: 640px) {
+
+  main {
+    padding-top: 36px;
+  }
+
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
   }
 
-  main {
-    padding-top: 36px;
-  }
 }
 
-/* Computadores */
+/* Computadores - três colunas */
 @media screen and (min-width: 850px) {
+
+  /* Oculta o botão hambúrguer */
   .menu-button {
     display: none;
   }
 
+  /* Organiza o cabeçalho horizontalmente */
   .header-inner {
     flex-wrap: nowrap;
   }
 
+  /* Flexbox no elemento nav:
+     requisito da auditoria WDD 131 S02 */
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    width: auto;
+  }
+
+  /* Mantém a navegação visível no desktop */
   .navigation,
   .navigation.open {
     display: flex;
     flex-direction: row;
-    width: auto;
     align-items: center;
+    width: auto;
     gap: 4px;
   }
 
+  /* Links do menu */
   .navigation a {
+    display: block;
     white-space: nowrap;
     padding: 10px 13px;
   }
 
+  /* Galeria com três colunas */
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* Espaçamento dos cartões */
   .gallery figure {
     padding: 12px;
   }
+
 }
+
