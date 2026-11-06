@@ -1,29 +1,26 @@
-# WDD 131 — S01: Página Inicial do Curso
+# WDD 131 — S01 Página Inicial (segunda submissão)
 
-## Arquivos
-- `index.html`: página inicial do curso (raiz de `wdd131`).
-- `estilos/base.css`: estilo responsivo usando CSS Flex (navegação) e CSS Grid (cartões).
-- `scripts/obterdatas.js`: ano atual e `document.lastModified`.
-- `imagens/`: duas imagens locais otimizadas (`perfil.webp` e `instituicao.webp`).
+Aluno: Lirionor Nascimento Guimarães.
 
-## Checklist atendida
-- `<!doctype html>`, `<html lang="pt-BR">`, `head` e `body`.
-- `head`: meta charset, meta viewport, title, meta description e meta author.
-- Header com `span id="titulo-curso"` e `nav` com LinkedIn, Canvas, Escrituras e Projeto Final.
-- `main` com `h1` (nome) e duas seções `class="card"` com título, imagens e conteúdo.
-- Footer com `© <span id="anoatual"></span>` + nome/local e `p id="ultimaModificacao"`.
-- Google Fonts via API oficial; navegação em Flex com efeito de hover; `main` centralizado e limitado; cartões em Grid.
-- JavaScript referenciado com `defer`; ano e última modificação gerados dinamicamente; sem saída para o console.
-- Imagens locais otimizadas (`perfil.webp` 22 kB, `instituicao.webp` 13 kB), com `alt` relevante e proporções preservadas.
+## O que contém
+- `index.html` — página inicial na raiz do repositório `wdd131`.
+- `estilos/base.css` — CSS próprio com Flexbox para navegação, Grid para cartões e hover.
+- `scripts/obterdatas.js` — ano e última modificação gerados por JavaScript.
+- `imagens/perfil.webp` e `imagens/instituicao.webp` — imagens locais e otimizadas.
 
-## Antes de enviar
-1. Confira o LinkedIn: o link aponta para a página pública do LinkedIn; insira a URL do seu perfil, se tiver.
-2. Abra a pasta no VS Code, inicie o Live Server e verifique Console, Network (< 500 kB), CSS Overview e Lighthouse (desktop).
-3. Commit/push para o repositório `wdd131` no GitHub, habilite o GitHub Pages a partir da raiz e envie a URL publicada no Canvas.
+## Como enviar ao GitHub pelo navegador
+1. Extraia o ZIP. Abra a pasta extraída.
+2. No repositório `https://github.com/lirionorng-hash/wdd131`, clique em **Add file → Upload files** na **raiz**.
+3. Arraste **os arquivos e pastas que estão DENTRO da pasta extraída**, sem criar `wdd131/wdd131`.
+4. Confirme a substituição dos arquivos quando indicada e clique em **Commit changes**.
+5. Confira `https://lirionorng-hash.github.io/wdd131/`.
+6. Use `Ctrl+Shift+R` para recarregar e execute a auditoria oficial S01 e Lighthouse.
 
-## Observações
-- Sem frameworks ou bibliotecas CSS/JS de terceiros.
-- As fontes do Google são carregadas pela API oficial; fontes de fallback configuradas.
+## Antes de reenviar
+- Confira se o navegador mostra sua foto, a imagem institucional, cabeçalho formatado e rodapé com ano e última modificação.
+- Teste o efeito hover nos links do menu.
+- Em DevTools → Network, confirme transferência inferior a 500 KB; fontes externas contam.
+- Em DevTools → Lighthouse (Desktop), revise Acessibilidade, Melhores Práticas e SEO.
+- Em `index.html`, o LinkedIn está no endereço genérico, permitido provisoriamente no enunciado.
 
-## Revisão técnica
-Consulte `AUDITORIA.md` para os ajustes realizados e os testes pendentes em navegador.
+> O pacote foi revisado e testado localmente. A auditoria oficial do servidor publicado precisa ser realizada após o upload.
