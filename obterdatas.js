@@ -1,12 +1,8 @@
-"use strict";
+// Preenche automaticamente o ano atual no rodapé
+const currentYearSpan = document.querySelector("#currentyear");
+const today = new Date();
+currentYearSpan.textContent = today.getFullYear();
 
-const anoAtual = document.querySelector("#anoatual");
-const ultimaModificacao = document.querySelector("#ultimaModificacao");
-
-if (anoAtual) {
-  anoAtual.textContent = new Date().getFullYear();
-}
-
-if (ultimaModificacao) {
-  ultimaModificacao.textContent = `Última modificação: ${document.lastModified}`;
-}
+// Preenche a data da última modificação do documento no rodapé
+const lastModifiedParagraph = document.querySelector("#lastModified");
+lastModifiedParagraph.textContent = `Última modificação: ${document.lastModified}`;
