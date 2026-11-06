@@ -1,0 +1,235 @@
+
+/* WDD 131 - S02 - Álbum de Templos */
+/* Lirionor Nascimento Guimarães */
+/* Estilos mobile first */
+
+:root {
+  --navy: #173a50;
+  --navy-deep: #102d41;
+  --teal: #136f71;
+  --ink: #172d3c;
+  --muted: #405b6b;
+  --background: #f5f8fa;
+  --paper: #ffffff;
+  --border: #d6e2e9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--background);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #075f8f;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f1b94f;
+  outline-offset: 3px;
+}
+
+/* Acessibilidade */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 12px;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Cabeçalho */
+
+header {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-title {
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* Botão de hambúrguer */
+
+.menu-button {
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 12px;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--paper);
+  background: var(--navy-deep);
+  border: 1px solid #aec4d0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* Navegação móvel */
+
+.navigation {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+.navigation.open {
+  display: flex;
+}
+
+.navigation a {
+  display: block;
+  color: var(--paper);
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+  background: #315e78;
+  color: #ffffff;
+}
+
+/* Conteúdo */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 50px;
+}
+
+.introduction {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0e6265;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Outfit", Arial, sans-serif;
+  color: var(--navy-deep);
+  font-size: clamp(1.85rem, 5vw, 2.7rem);
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+.introduction p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+/* Álbum de imagens */
+
+.gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery figure {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(16, 45, 65, 0.07);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #eaf0f4;
+  border-radius: 7px;
+}
+
+.gallery figcaption {
+  padding: 12px 6px 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--navy-deep);
+}
+
+/* Rodapé */
+
+footer {
+  background: var(--navy);
+  color: var(--paper);
+  padding: 24px 16px;
+  text-align: center;
+}
+
+footer p {
+  margin: 4px 0;
+  font-size: 0.88rem;
+}
+
+#ultimaModificacao {
+  color: #e1edf4;
+  font-size: 0.8rem;
+}
+
+/* Preferências de acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
