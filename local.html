@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça Curitiba, no Paraná: cultura, natureza, atrações e um exemplo de clima com cálculo de sensação térmica.">
+  <meta name="author" content="Lirionor Nascimento Guimarães">
+  <title>Curitiba, Brasil | Página do País | WDD 131</title>
+  <link rel="stylesheet" href="estilos/local.css">
+  <script src="scripts/local.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Curitiba, Brasil</h1>
+  </header>
+  <main>
+    <div class="hero">
+      <picture>
+        <source media="(min-width: 700px)" srcset="imagens/curitiba-grande.webp">
+        <img src="imagens/curitiba-pequena.webp" alt="Ilustração do Jardim Botânico de Curitiba, com sua estufa de vidro e jardins geométricos" width="660" height="787">
+      </picture>
+      <section class="painel dados" aria-labelledby="titulo-dados">
+        <h2 id="titulo-dados">Dados</h2>
+        <dl>
+          <dt>País:</dt><dd>Brasil</dd>
+          <dt>Estado:</dt><dd>Paraná</dd>
+          <dt>Capital estadual:</dt><dd>Curitiba</dd>
+          <dt>Idioma:</dt><dd>Português</dd>
+          <dt>Moeda:</dt><dd>Real brasileiro (BRL)</dd>
+          <dt>Fuso horário:</dt><dd>UTC−3</dd>
+          <dt>Destaque:</dt><dd>Jardim Botânico</dd>
+        </dl>
+      </section>
+      <section class="painel clima" aria-labelledby="titulo-clima">
+        <h2 id="titulo-clima">Clima</h2>
+        <img class="icone-clima-mobile" src="imagens/clima.svg" alt="Sol parcialmente encoberto por nuvem" width="72" height="72">
+        <dl>
+          <dt>Temperatura:</dt><dd>8 °C</dd>
+          <dt>Condições:</dt><dd>Parcialmente nublado</dd>
+          <dt>Velocidade do vento:</dt><dd>12 km/h</dd>
+          <dt>Sensação térmica:</dt><dd id="sensacao-termica">Calculando...</dd>
+        </dl>
+      </section>
+    </div>
+    <p class="legenda">Uma representação ilustrativa do Jardim Botânico de Curitiba, um dos cartões-postais da cidade.</p>
+  </main>
+  <footer>
+    <p>© <span id="ano-atual"></span> · Lirionor Nascimento Guimarães · Brasil</p>
+    <p class="modificacao">Última modificação: <span id="ultima-modificacao"></span></p>
+  </footer>
+</body>
+</html>
