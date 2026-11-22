@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Lirionor Nascimento Guimarães">
+  <meta name="description" content="Álbum interativo de templos com filtros por data de consagração e tamanho. Projeto WDD 131, Semana 04.">
+  <meta name="theme-color" content="#142d3b">
+  <title>Álbum de Templos Filtrados | WDD 131</title>
+  <link rel="stylesheet" href="estilos/templos-filtrados.css">
+  <script src="scripts/templos-dados.js" defer></script>
+  <script src="scripts/templos-filtrados.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>Álbum de Templos <small>WDD 131 • Semana 04</small></span></div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Abrir menu">☰</button>
+      <nav id="navigation" class="navigation" aria-label="Filtros de templos">
+        <button type="button" class="filter-button active" data-filter="todos" aria-pressed="true">Início</button>
+        <button type="button" class="filter-button" data-filter="antigos" aria-pressed="false">Antigos</button>
+        <button type="button" class="filter-button" data-filter="novos" aria-pressed="false">Novos</button>
+        <button type="button" class="filter-button" data-filter="grandes" aria-pressed="false">Grandes</button>
+        <button type="button" class="filter-button" data-filter="pequenos" aria-pressed="false">Pequenos</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="container">
+    <div class="hero">
+      <p class="eyebrow">EXPLORAR • CONHECER • APRENDER</p>
+      <h1>Templos ao redor do mundo</h1>
+      <p>Conheça templos de diferentes épocas e lugares. Selecione um filtro para explorar as fotografias e informações.</p>
+    </div>
+    <section aria-labelledby="galeria-titulo">
+      <div class="section-heading"><div><h2 id="galeria-titulo">Galeria de templos</h2><p id="filtro-descricao">Todos os templos do catálogo</p></div><p id="quantidade" class="counter" role="status" aria-live="polite"></p></div>
+      <div class="gallery" id="temple-cards"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© <span id="ano-atual"></span> • Lirionor Nascimento Guimarães • Paraná, Brasil</p>
+    <p>Última modificação: <span id="ultima-modificacao"></span></p>
+    <p class="credits">Fotos: Wikimedia Commons (autores e licenças informados nos créditos do pacote).</p>
+  </footer>
+</body>
+</html>
