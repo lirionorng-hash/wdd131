@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Lirionor Nascimento Guimarães">
+  <meta name="description" content="Álbum interativo de templos com filtros por data de consagração e tamanho. Projeto WDD 131, Semana 04.">
+  <meta name="theme-color" content="#142d3b">
+  <title>Álbum de Templos Filtrados | WDD 131</title>
+  <style>
+:root{color-scheme:light;--navy:#142d3b;--navy-2:#1b4558;--gold:#b18636;--ink:#203343;--muted:#465b69;--bg:#f4f7f8;--white:#fff;--line:#d4dde2;--focus:#b05d00}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.skip-link{position:absolute;left:12px;top:-100px;background:white;padding:10px;z-index:99}.skip-link:focus{top:12px}
+.site-header{background:var(--navy);color:white;box-shadow:0 2px 12px #071f3026}
+.header-inner{max-width:1160px;padding:16px 22px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:750;line-height:1.2;font-size:1.18rem;white-space:nowrap}.brand small{font-weight:500;font-size:.76rem;letter-spacing:.04em;display:block;color:#dee9ef;margin-top:5px}.brand-mark{color:#f2c979;font-size:2.2rem}
+.navigation{display:flex;align-items:center;gap:5px}.filter-button{font:inherit;color:#fff;background:transparent;border:1px solid transparent;border-radius:8px;padding:10px 13px;cursor:pointer;font-weight:600}.filter-button:hover,.filter-button:focus-visible{background:#2c5265}.filter-button.active{background:#f0d295;color:#202d34}
+.menu-toggle{display:none;font:inherit;font-size:1.3rem;cursor:pointer;border:1px solid #b6c6ce;border-radius:7px;background:transparent;color:white;width:46px;height:44px}
+.container{max-width:1160px;margin:0 auto;padding:0 22px 72px}.hero{text-align:center;padding:52px 12px 32px}.eyebrow{font-size:.77rem;font-weight:800;letter-spacing:.16em;color:#865f22;margin:0 0 9px}.hero h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.2;margin:0 0 12px;color:var(--navy)}.hero>p:last-child{max-width:670px;margin:0 auto;color:var(--muted)}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 22px}.section-heading h2{font-size:1.4rem;margin:0}.section-heading p{margin:4px 0;color:var(--muted)}.counter{font-weight:700;color:var(--navy);white-space:nowrap}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}.temple-card{overflow:hidden;background:white;border-radius:13px;border:1px solid var(--line);box-shadow:0 4px 14px #17324512}.temple-card h3{color:var(--navy);font-size:1.2rem;margin:0 0 12px}.temple-card .details{padding:20px}.temple-card p{margin:5px 0;font-size:.94rem}.temple-card strong{color:#263c4a}.temple-card img{display:block;width:100%;height:205px;object-fit:cover;background:#dbe7eb}.temple-card .photo-credit{font-size:.75rem;color:#465b69;margin-top:12px}.photo-credit a{color:#174d78;text-decoration:underline;text-underline-offset:2px}
+.empty{grid-column:1/-1;padding:44px;text-align:center;background:white;border:1px solid var(--line);border-radius:12px}
+.site-footer{background:var(--navy);color:#eff6f9;text-align:center;padding:22px 12px;font-size:.88rem}.site-footer p{margin:5px}.site-footer .credits{color:#d2e0e8;font-size:.78rem}
+@media(max-width:880px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.header-inner{flex-wrap:wrap}.navigation{width:100%;justify-content:center}}
+@media(max-width:600px){.header-inner{flex-wrap:nowrap;align-items:flex-start;position:relative}.brand{white-space:normal;font-size:1.04rem}.menu-toggle{display:block;flex-shrink:0}.navigation{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;background:var(--navy-2);padding:12px 20px 18px;flex-direction:column;align-items:stretch;box-shadow:0 6px 12px #091e2c33}.navigation.open{display:flex}.filter-button{text-align:left;padding:12px}.gallery{grid-template-columns:1fr}.hero{padding-top:35px}.section-heading{align-items:start;flex-wrap:wrap}.temple-card img{height:230px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+</style>
+
+
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>Álbum de Templos <small>WDD 131 • Semana 04</small></span></div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Abrir menu">☰</button>
+      <nav id="navigation" class="navigation" aria-label="Filtros de templos">
+        <button type="button" class="filter-button active" data-filter="todos" aria-pressed="true">Início</button>
+        <button type="button" class="filter-button" data-filter="antigos" aria-pressed="false">Antigos</button>
+        <button type="button" class="filter-button" data-filter="novos" aria-pressed="false">Novos</button>
+        <button type="button" class="filter-button" data-filter="grandes" aria-pressed="false">Grandes</button>
+        <button type="button" class="filter-button" data-filter="pequenos" aria-pressed="false">Pequenos</button>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="container">
+    <div class="hero">
+      <p class="eyebrow">EXPLORAR • CONHECER • APRENDER</p>
+      <h1>Templos ao redor do mundo</h1>
+      <p>Conheça templos de diferentes épocas e lugares. Selecione um filtro para explorar as fotografias e informações.</p>
+    </div>
+    <section aria-labelledby="galeria-titulo">
+      <div class="section-heading"><div><h2 id="galeria-titulo">Galeria de templos</h2><p id="filtro-descricao">Todos os templos do catálogo</p></div><p id="quantidade" class="counter" role="status" aria-live="polite"></p></div>
+      <div class="gallery" id="temple-cards"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© <span id="ano-atual"></span> • Lirionor Nascimento Guimarães • Paraná, Brasil</p>
+    <p>Última modificação: <span id="ultima-modificacao"></span></p>
+    <p class="credits">Fotografias: Wikimedia Commons. Os créditos e licenças são indicados em cada cartão.</p>
+  </footer>
+<script>
+"use strict";
+// 7 templos originais do enunciado + 3 entradas adicionais.
+// Fotos de Wikimedia Commons (arquivos individuais e autores creditados).
+// A opção Special:FilePath entrega o arquivo original ou redireciona para ele.
+const commons = (nomeArquivo) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(nomeArquivo)}`;
+const fonte = (nomeArquivo) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(nomeArquivo).replace(/%20/g,"_")}`;
+const templos = [
+  {nomeDoTemplo:"Aba Nigeria",localizacao:"Aba, Nigéria",consagracao:"2005, 7 de agosto",anoConsagracao:2005,area:11500,arquivo:"Aba Nigeria Temple.jpg",autorImagem:"Nyerougo",licenca:"CC0"},
+  {nomeDoTemplo:"Manti Utah",localizacao:"Manti, Utah, Estados Unidos",consagracao:"1888, 21 de maio",anoConsagracao:1888,area:74792,arquivo:"Manti Utah Temple East Wall.jpg",autorImagem:"Itsetsyoufree32",licenca:"CC BY 4.0"},
+  {nomeDoTemplo:"Payson Utah",localizacao:"Payson, Utah, Estados Unidos",consagracao:"2015, 7 de junho",anoConsagracao:2015,area:96630,arquivo:"Payson Utah Temple 2014-11-28.jpg",autorImagem:"Evanmanning",licenca:"CC BY-SA 4.0"},
+  {nomeDoTemplo:"Yigo Guam",localizacao:"Yigo, Guam",consagracao:"2020, 2 de maio",anoConsagracao:2020,area:6861,arquivo:"Yigo Guam Temple.jpg",autorImagem:"LittleT889",licenca:"CC BY 4.0"},
+  {nomeDoTemplo:"Washington D.C.",localizacao:"Kensington, Maryland, Estados Unidos",consagracao:"1974, 19 de novembro",anoConsagracao:1974,area:156558,arquivo:"Washington D.C. Temple At Dusk.jpg",autorImagem:"Joe Ravi",licenca:"CC BY-SA 3.0"},
+  {nomeDoTemplo:"Lima Peru",localizacao:"Lima, Peru",consagracao:"1986, 10 de janeiro",anoConsagracao:1986,area:9600,arquivo:"Lima Peru Temple.jpg",autorImagem:"Jeremy O. Evans",licenca:"CC BY-SA 3.0"},
+  {nomeDoTemplo:"Cidade do México, México",localizacao:"Cidade do México, México",consagracao:"1983, 2 de dezembro",anoConsagracao:1983,area:116642,arquivo:"Mexico-city-mormon-temple-1441594497.jpg",autorImagem:"Marcorosas1991",licenca:"CC BY-SA 4.0"},
+  {nomeDoTemplo:"Logan Utah",localizacao:"Logan, Utah, Estados Unidos",consagracao:"1884, 17 de maio",anoConsagracao:1884,area:119619,arquivo:"Logan Utah Temple.jpg",autorImagem:"Cory Maylett",licenca:"CC BY-SA 3.0"},
+  {nomeDoTemplo:"Manaus Brasil",localizacao:"Manaus, Amazonas, Brasil",consagracao:"2012, 10 de junho",anoConsagracao:2012,area:32032,arquivo:"Templo SUD de Manaus 3.JPG",autorImagem:"União da Juventude Mestiça",licenca:"CC BY-SA 3.0"},
+  {nomeDoTemplo:"Papeete Taiti",localizacao:"Papeete, Polinésia Francesa",consagracao:"1983, 27 de outubro",anoConsagracao:1983,area:9920,arquivo:"Temple mormon Tahiti.jpg",autorImagem:"Saga70",licenca:"CC BY-SA 4.0"}
+].map(t => ({
+  ...t,
+  urlDaImagem: commons(t.arquivo),
+  fonteImagem: fonte(t.arquivo)
+}));
+
+</script>
+<script>
+"use strict";
+// Os dados estão no arquivo scripts/templos-dados.js.
+const galeria = document.querySelector("#temple-cards");
+const contador = document.querySelector("#quantidade");
+const descricao = document.querySelector("#filtro-descricao");
+const botoes = document.querySelectorAll(".filter-button");
+const menu = document.querySelector("#navigation");
+const menuToggle = document.querySelector("#menu-toggle");
+
+const descricoes = {
+  todos: "Todos os templos do catálogo",
+  antigos: "Consagrados antes de 1900",
+  novos: "Consagrados depois de 2000",
+  grandes: "Área superior a 90.000 pés quadrados",
+  pequenos: "Área inferior a 10.000 pés quadrados"
+};
+function filtrarTemplos(filtro) {
+  switch (filtro) {
+    case "antigos": return templos.filter(t => t.anoConsagracao < 1900);
+    case "novos": return templos.filter(t => t.anoConsagracao > 2000);
+    case "grandes": return templos.filter(t => t.area > 90000);
+    case "pequenos": return templos.filter(t => t.area < 10000);
+    default: return templos;
+  }
+}
+function construirCartao(templo) {
+  const card = document.createElement("article");
+  card.className = "temple-card";
+  const info = document.createElement("div");
+  info.className = "details";
+  const titulo = document.createElement("h3");
+  titulo.textContent = templo.nomeDoTemplo;
+  const local = document.createElement("p");
+  const data = document.createElement("p");
+  const tamanho = document.createElement("p");
+  const criarLinha = (alvo, rotulo, valor) => {
+    const negrito = document.createElement("strong");
+    negrito.textContent = `${rotulo}: `;
+    alvo.append(negrito,document.createTextNode(valor));
+  };
+  criarLinha(local,"Localização",templo.localizacao);
+  criarLinha(data,"Consagração",templo.consagracao);
+  criarLinha(tamanho,"Área",`${templo.area.toLocaleString("pt-BR")} pés²`);
+  const imagem = document.createElement("img");
+  imagem.src = templo.urlDaImagem;
+  imagem.alt = `Fotografia do templo ${templo.nomeDoTemplo}`;
+  imagem.loading = "lazy";
+  imagem.decoding = "async";
+  imagem.width = 640;
+  imagem.height = 420;
+  const credito = document.createElement("p");
+  credito.className = "photo-credit";
+  const link = document.createElement("a");
+  link.href = templo.fonteImagem;
+  link.textContent = `Foto: ${templo.autorImagem} (${templo.licenca})`;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  credito.append(link);
+  info.append(titulo,local,data,tamanho,credito);
+  card.append(imagem,info);
+  return card;
+}
+function mostrarTemplos(filtro = "todos") {
+  const resultado = filtrarTemplos(filtro);
+  galeria.replaceChildren(...resultado.map(construirCartao));
+  if (resultado.length === 0) {
+    const vazio = document.createElement("p");
+    vazio.className = "empty";
+    vazio.textContent = "Não há templos para este filtro.";
+    galeria.append(vazio);
+  }
+  contador.textContent = `${resultado.length} ${resultado.length === 1 ? "templo" : "templos"}`;
+  descricao.textContent = descricoes[filtro];
+  botoes.forEach(botao => {
+    const selecionado = botao.dataset.filter === filtro;
+    botao.classList.toggle("active", selecionado);
+    botao.setAttribute("aria-pressed", String(selecionado));
+  });
+}
+botoes.forEach(botao => botao.addEventListener("click", () => {
+  mostrarTemplos(botao.dataset.filter);
+  menu.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Abrir menu");
+}));
+menuToggle.addEventListener("click", () => {
+  const aberto = menu.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(aberto));
+  menuToggle.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+});
+document.querySelector("#ano-atual").textContent = new Date().getFullYear();
+document.querySelector("#ultima-modificacao").textContent = new Date(document.lastModified).toLocaleString("pt-BR");
+mostrarTemplos();
+
+</script>
+</body>
+</html>
