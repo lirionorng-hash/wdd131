@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Avalie um produto informando classificação, data de instalação e recursos úteis.">
+  <meta name="author" content="Lirionor Nascimento Guimaraes">
+  <title>Avaliação de Produto | WDD 131</title>
+  <link rel="stylesheet" href="styles/formulario.css">
+  <script src="scripts/produtos.js" defer></script>
+  <script src="scripts/datas.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="container"><p class="curso">WDD 131 · Fundamentos da Web Dinâmica</p><h1>Avaliação de Produto</h1><p>Conte como foi a sua experiência de uso.</p></div></header>
+  <main class="container">
+    <form method="get" action="avaliacao.html" class="painel">
+      <p class="obrigatorios">Os campos marcados com <span aria-hidden="true">*</span> são obrigatórios.</p>
+      <div class="campo"><label for="produto">Nome do Produto <span aria-hidden="true">*</span></label><select id="produto" name="produto" required><option value="" disabled selected>Selecione um Produto...</option></select></div>
+      <fieldset class="campo"><legend>Classificação Geral <span aria-hidden="true">*</span></legend><div class="avaliacoes">
+        <label><span>☆</span><input id="nota1" name="classificacao" type="radio" value="1" required><span>1 estrela</span></label>
+        <label><span>☆☆</span><input id="nota2" name="classificacao" type="radio" value="2" required><span>2 estrelas</span></label>
+        <label><span>☆☆☆</span><input id="nota3" name="classificacao" type="radio" value="3" required><span>3 estrelas</span></label>
+        <label><span>☆☆☆☆</span><input id="nota4" name="classificacao" type="radio" value="4" required><span>4 estrelas</span></label>
+        <label><span>☆☆☆☆☆</span><input id="nota5" name="classificacao" type="radio" value="5" required><span>5 estrelas</span></label>
+      </div></fieldset>
+      <div class="campo"><label for="instalacao">Data de Instalação <span aria-hidden="true">*</span></label><input type="date" id="instalacao" name="instalacao" required></div>
+      <fieldset class="campo"><legend>Quais recursos você achou úteis no produto? <small>(Marque todos os que se aplicam)</small></legend><div class="opcoes">
+        <label for="durabilidade"><input type="checkbox" id="durabilidade" name="recursos" value="Durabilidade"> Durabilidade</label>
+        <label for="facilidade"><input type="checkbox" id="facilidade" name="recursos" value="Facilidade de uso"> Facilidade de uso</label>
+        <label for="desempenho"><input type="checkbox" id="desempenho" name="recursos" value="Desempenho"> Desempenho</label>
+        <label for="design"><input type="checkbox" id="design" name="recursos" value="Design"> Design</label>
+      </div></fieldset>
+      <div class="campo"><label for="avaliacao">Avaliação Escrita <small>(opcional)</small></label><textarea id="avaliacao" name="avaliacao" rows="5" placeholder="Escreva sua opinião sobre o produto..."></textarea></div>
+      <div class="campo"><label for="usuario">Seu nome <small>(opcional)</small></label><input type="text" id="usuario" name="usuario" autocomplete="name" placeholder="Como você gostaria de ser identificado?"></div>
+      <input type="submit" value="Publicar Avaliação" class="botao">
+    </form>
+  </main>
+  <footer class="rodape"><div class="container"><p>© <span id="ano"></span> · Lirionor Nascimento Guimaraes · Paraná, Brasil</p><p>Última modificação: <span id="modificacao"></span></p></div></footer>
+</body>
+</html>
